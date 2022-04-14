@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(231, 231, 231);/*cor body*/
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Raleway', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;/*adicionar espaçamento*/
+    align-items: center;/*alinhamento dos elementos*/
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(0, 0, 0);/*sombra*/
+    padding: 0px 20px;
+}
+
+.logo {
+    color: rgb(255, 255, 255);
+    text-transform: lowercase; /*transforar o texto em caixa baixa*/
+    letter-spacing: -1px; /*espaçamento das letras*/
+}
+
+.logo span:first-child {/*está selecionado o primeiro span para ser editado*/
+    color: rgb(139, 139, 139);
+
+}
+
+.logo span:last-child { /*editando os seguintes spans*/
+    font-size: 12px;
+    letter-spacing: normal;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;/*deixar a posição do submenu relativa ao pai dele*/
+}
+
+.menu > li a {
+    padding: 17px;    
+    color: rgb(139, 139, 139);
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li:hover{ /*transformar os botões do menu em áreas clicaveis e com um background*/
+    background: rgb(255, 255, 255);
+}
+
+.menu li:hover >.submenu,
+.submenu li:hover >.submenu{ /*o + se da pois as tags são irmãs e não pais e filhas*/
+    display: block; /*deixar o submenu em blocks*/
+}
+
+.submenu {
+    display: none; /*ocultar o submenu*/
+    position: absolute; /*empurrar o elemento para baixo do pai dele*/
+    top: 50px;
+    left: 0%;
+    background: rgb(0, 0, 0);
+    min-width: 100%; /*largura minima do elemento*/
+    list-style: none;
+}
+
+.submenu li:hover {
+    background: rgb(224, 224, 224);
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu li .submenu {
+    top: 0;
+    left: 100%;
+}
